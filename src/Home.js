@@ -1,5 +1,6 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
+import Orders from './Orders'
 
 export default function Home(){
     const history = useHistory()
@@ -9,10 +10,8 @@ export default function Home(){
 
     return(
         <div className='home-container'>
-            <button className='toOrderForm'
-                onClick={routeToOrder}>
-                    Order Pizza!
-            </button>
+            <h2>Your Orders</h2>
+            <Orders />
         </div>
     )
 }
