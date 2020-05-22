@@ -10,7 +10,7 @@ function Pizza(props){
         onCheckboxChange
     }=props
     return(
-        <form className='form-container'>
+        <form className='form-container' onSubmit={onSubmit}>
             <div className='submit'>
                 <h2>Add to order</h2>
                 <button disabled={disabled}>Submit Order</button>

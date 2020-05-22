@@ -35,9 +35,9 @@ const App = () => {
   const [disabled, setDisabled] = useState(initialDisabled)
 
 
-const sendOrder = newOrder =>{
-  setOrders(newOrder)
-  console.log(newOrder)
+// const sendOrder = (newOrder) =>{
+//   setOrders({newOrder})
+//   console.log(newOrder)
   // axios.post('http:localhost:3000/Orders', newOrder)
   //   .then(res=>{
   //     setOrders([res.data, ...orders])
@@ -48,7 +48,7 @@ const sendOrder = newOrder =>{
   //   .finally(()=>{
   //     setFormValues(initialFormValues)
   //   })
-}
+// }
 
 const onInputChange = evt =>{
   const name = evt.target.name
@@ -96,7 +96,7 @@ const onCheckboxChange = evt =>{
       toppings: Object.keys(formValues.toppings)
         .filter(topping => formValues.toppings[topping]===true)
     }
-    sendOrder(newOrder)
+    setOrders(newOrder)
     console.log(newOrder)
   }
 
