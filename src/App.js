@@ -123,7 +123,7 @@ const onCheckboxChange = evt =>{
         <p>It's Friday! You know what that means... PIZZA NIGHT!</p>
         <div className='nav-links'>
           <Link to='/'>Home</Link>
-          <Link to='/pizza'>Order Your Pizza!</Link>
+          <Link className='orderLink' to='/pizza'>Order Your Pizza!</Link>
         </div>
       </nav>
       <Switch>
