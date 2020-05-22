@@ -1,10 +1,7 @@
 describe('form inputs', ()=>{
     it('navigates to the site', ()=>{
-        cy.visit('http://localhost:3000/')
+        cy.visit('http://localhost:3000/pizza')
         cy.url().should('include', 'localhost')
-    })
-    it('Gets order form', ()=>{
-        cy.get('nav-links.orderLink').click().should('include', 'Size')
     })
     it('Verifies name field works', ()=>{
         cy.get('input[name="custName"]')

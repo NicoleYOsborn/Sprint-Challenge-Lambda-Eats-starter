@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {Route, Switch, Link} from 'react-router-dom';
-import axios from 'axios'
+
 import * as yup from 'yup'
 
 import Pizza from './Pizza'
@@ -34,27 +34,20 @@ const App = () => {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [disabled, setDisabled] = useState(initialDisabled)
 
-const getOrders = ()=>{
-  axios.get('http://localhost:3000/Orders')
-    .then(res =>{
-      setOrders(res.data)
-    })
-    .catch(err =>{
-      debugger
-    })
-}
 
 const sendOrder = newOrder =>{
-  axios.post('http:localhost:3000/Orders', newOrder)
-    .then(res=>{
-      setOrders([res.data, ...orders])
-    })
-    .catch(err =>{
-      debugger
-    })
-    .finally(()=>{
-      setFormValues(initialFormValues)
-    })
+  setOrders(newOrder)
+  console.log(newOrder)
+  // axios.post('http:localhost:3000/Orders', newOrder)
+  //   .then(res=>{
+  //     setOrders([res.data, ...orders])
+  //   })
+  //   .catch(err =>{
+  //     debugger
+  //   })
+  //   .finally(()=>{
+  //     setFormValues(initialFormValues)
+  //   })
 }
 
 const onInputChange = evt =>{
@@ -104,10 +97,9 @@ const onCheckboxChange = evt =>{
         .filter(topping => formValues.toppings[topping]===true)
     }
     sendOrder(newOrder)
+    console.log(newOrder)
   }
-  useEffect(()=>{
-    getOrders()
-  }, [])
+
   useEffect(()=>{
     formSchema.isValid(formValues)
       .then(valid =>{
@@ -133,7 +125,7 @@ const onCheckboxChange = evt =>{
         </Route>
 
         <Route path='/'>
-          <Home />
+          <Home orders ={orders} />
         </Route>
       </Switch>
     </div>

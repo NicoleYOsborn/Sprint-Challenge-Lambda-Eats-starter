@@ -10,7 +10,7 @@ function Pizza(props){
         onCheckboxChange
     }=props
     return(
-        <form classname='form-container'>
+        <form className='form-container'>
             <div className='submit'>
                 <h2>Add to order</h2>
                 <button disabled={disabled}>Submit Order</button>
@@ -22,7 +22,7 @@ function Pizza(props){
                 </div>
             </div>
 
-            <div classname='inputs'>
+            <div className='inputs'>
 {/* input for name */}
                 <label htmlFor='custNameInput' onSubmit={onSubmit}>
                     Name: &nbsp;
@@ -54,7 +54,7 @@ function Pizza(props){
                     </label>
                 </div>
                     {/* input for special instructions */}
-                <label htmlFor='specialInstructionsInput' onSubmit={onSubmit}>
+                <label htmlFor='specialInstructionsInput'>
                     Special Instructions: &nbsp;
                     <input id='special' name='special' value={values.special} onChange={onInputChange} type="text" placeholder='List any special instructions for your order'/>
                 </label>
